@@ -25,6 +25,7 @@ public class Calculadora {
 		return a + b;
 	}
 
+
 	/**
 	 * Este método realiza la operación de resta entre dos números enteros.
 	 *
@@ -91,11 +92,7 @@ public class Calculadora {
 
 		boolean resultado;
 
-		if (numero % 2 == 0) {
-			resultado = true;
-		} else {
-			resultado = false;
-		}
+		resultado = numero % 2 == 0;
 
 		return resultado;
 	}
@@ -108,17 +105,17 @@ public class Calculadora {
 
 	public String conversorDecimalABinario(int numero) {
 
-		String binario = "";
+		StringBuilder binario = new StringBuilder();
 		int cociente = numero;
 		int resto;
 
 		while (cociente > 0) {
 			resto = cociente % 2;
-			binario = resto + binario;
+			binario.insert(0, resto);
 			cociente = cociente / 2;
 
 		}
-		return binario;
+		return binario.toString();
 	}
 }
 
